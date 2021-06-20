@@ -690,6 +690,10 @@ video {
   --transition-time: 0.1s;
 }
 
+.primo-page {
+  color: var(--color-text);
+}
+
 .primo-copy {
   margin: 0 auto;
   width: 100%;

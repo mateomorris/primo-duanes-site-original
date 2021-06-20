@@ -6,7 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="./styles.css" />
         
-        
+        <style>
+  :root {
+    --color-text: #222;
+    --color-accent: #1D4ED8;
+  }
+</style>
         
       </head>
       <body data-instant-intensity="all" class="primo-page">   
@@ -70,8 +75,8 @@
         </a>
       </li>
        
-      <li class="cta">
-        <a href="cta">Call to Action</a>
+      <li>
+        <a class="cta" href="cta">Call to Action</a>
       </li>
     </ul>
   </div>
@@ -110,11 +115,19 @@
   #component-imizi .container .right .social-link {
         padding-right: 1rem;
       }
+  #component-imizi .container .right .social-link i:hover {
+          color: var(--color-accent);
+        }
   #component-imizi .container .right .cta {
+        display: block;
         padding: 0.5rem 1rem;
-        border: 1px solid #222;
+        border: 1px solid var(--color-accent);
         border-radius: 0.25rem;
-      }</style>
+      }
+  #component-imizi .container .right .cta:hover {
+          color: white;
+          background: var(--color-accent);
+        }</style>
       </div>
       
       <div class="block" id="block-nplrs">
@@ -169,6 +182,10 @@
           border-radius: 2rem;
           box-shadow: 0px 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
         }
+  #component-nplrs header .container .links .button:hover {
+            color: white;
+            background: var(--color-accent);
+          }
   #component-nplrs ul {
     display: flex;
     flex-direction: column;
@@ -228,7 +245,6 @@
     grid-gap: 2rem;
   }
   #component-kuuqw section .card {
-      color: #222;
       background: white;
       border: 1px solid gainsboro;
     }
@@ -374,16 +390,16 @@
               display: block;
             }
   #component-ryvdu section .events .item dd .location {
-            color: #555;
+            filter: brightness(1.5);
           }
   #component-ryvdu section .events .item a {
-          border: 2px solid #222;
+          border: 2px solid var(--color-accent);
           padding: 0.5rem 1rem;
           display: inline-block;
         }
   #component-ryvdu section .events .item a:hover {
             color: white;
-            background: #222;
+            background: var(--color-accent);
           }
   #component-ryvdu section .events .item:not(:last-child) {
           border-bottom: 1px solid #eee;
@@ -512,6 +528,7 @@
       padding-bottom: 2rem;
     }
     #component-yprqy footer .container .logo img {
+        display: inline-block;
         width: 100%;
         max-width: 10rem;
         margin-bottom: 1rem;
