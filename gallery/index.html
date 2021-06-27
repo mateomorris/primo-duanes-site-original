@@ -242,7 +242,8 @@
           // View a list of images.
           // Note: All images within the container will be found by calling `element.querySelectorAll('img')`.
           const gallery = new Viewer(document.getElementById('images'), {
-
+          	zoomable: false,
+            zoomOnWheel: false
           });
         </script>
       </div>
