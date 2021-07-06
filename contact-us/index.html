@@ -23,27 +23,36 @@
     <a class="logo" href="/">
       <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.jpg" />
     </a>
-    <nav class="center">
-      <ul class="flex items-center">
-        <li class="ml-6 font-semibold">
+    <nav>
+      <ul>
+        <li>
           <a
-            class="border-b-2 border-transparent hover:border-gray-500 transition-colors duration-200"
             href="/"
             >Home</a
           >
         </li>
-        <li class="ml-6 font-semibold">
+        <li>
           <a
-            class="border-b-2 border-transparent hover:border-gray-500 transition-colors duration-200"
             href="/contact-us"
             >Contact</a
           >
         </li>
-        <li class="ml-6 font-semibold">
+        <li>
           <a
-            class="border-b-2 border-transparent hover:border-gray-500 transition-colors duration-200"
             href="/gallery"
             >Gallery</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="/programs"
+            >Programs</a
           >
         </li>
       </ul>
@@ -95,11 +104,25 @@
   #component-eznpl .container .logo img {
         max-width: 10rem;
       }
-  #component-eznpl .container nav.center {
+  #component-eznpl .container nav {
       display: flex;
       justify-content: center;
-      align-items: center;
     }
+  #component-eznpl .container nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  #component-eznpl .container nav ul li a {
+            font-weight: 600;
+            margin-left: 2rem;
+            -webkit-text-decoration: underline transparent;
+                    text-decoration: underline transparent;
+          }
+  #component-eznpl .container nav ul li a:hover {
+              -webkit-text-decoration-color: var(--color-accent, #222);
+                      text-decoration-color: var(--color-accent, #222);
+            }
   #component-eznpl .container .right {
       display: flex;
       justify-content: flex-end;
@@ -125,44 +148,44 @@
       
       <div class="block" id="block-rqkpm">
         <div class="primo-component" id="component-rqkpm">
-          <div><header>
-  <div class="container">
-    <h1 class="heading" id="main-heading">Creative and profit.</h1>
-    <p class="subheading">We obtain results with marketing, creative, and industry experience.</p>
-  </div>
-</header></div>
+          <div><header class="container">
+  <h1 class="heading"></h1>
+  <p class="subheading"></p>
+</header>
+<img src="" alt="￰">￰</div>
           
         </div>
         <style type="text/css">#component-rqkpm {
   --verydarkgray: #222222;
+  background-color: rgba(10, 10, 10, .8);
+  color: white;
+  padding: 5rem 0;
+  position: relative;
 }
   #component-rqkpm header {
-    padding: 5rem 0;
-    background: center / cover no-repeat;
-    background-image: url(https://placeimg.com/1000/1000/tech);
-    background-color: rgba(10, 10, 10, .8);
     background-blend-mode: multiply;
-    color: white;
+    z-index: 1;
+    position: relative;
   }
-  #component-rqkpm header .container .heading {
-        font-size: 2rem;
-        font-weight: 600;
-        line-height: 1.2;
-        margin-bottom: 1rem;
-      }
-  #component-rqkpm header .container .subheading {
-        font-size: 1.25rem;
-      }
-  @media (min-width: 600px) {
-        #component-rqkpm header .container .heading {
-          font-size: 3rem;
-        }
-        #component-rqkpm header .container .subheading {
-          font-size: 1.5rem;
-        }
-        #component-rqkpm header .container .links {
-          grid-template-columns: repeat( auto-fill, minmax(250px, auto) );
-        }
+  #component-rqkpm header .heading {
+      font-size: 2rem;
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+    }
+  #component-rqkpm header .subheading {
+      font-size: 1.25rem;
+    }
+  #component-rqkpm img {
+    opacity: 1;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    mix-blend-mode: darken;
+    -o-object-fit: cover;
+       object-fit: cover;
   }</style>
       </div>
       

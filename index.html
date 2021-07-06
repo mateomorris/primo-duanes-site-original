@@ -23,27 +23,36 @@
     <a class="logo" href="/">
       <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.jpg" />
     </a>
-    <nav class="center">
-      <ul class="flex items-center">
-        <li class="ml-6 font-semibold">
+    <nav>
+      <ul>
+        <li>
           <a
-            class="border-b-2 border-transparent hover:border-gray-500 transition-colors duration-200"
             href="/"
             >Home</a
           >
         </li>
-        <li class="ml-6 font-semibold">
+        <li>
           <a
-            class="border-b-2 border-transparent hover:border-gray-500 transition-colors duration-200"
             href="/contact-us"
             >Contact</a
           >
         </li>
-        <li class="ml-6 font-semibold">
+        <li>
           <a
-            class="border-b-2 border-transparent hover:border-gray-500 transition-colors duration-200"
             href="/gallery"
             >Gallery</a
+          >
+        </li>
+        <li>
+          <a
+            href="/about"
+            >About</a
+          >
+        </li>
+        <li>
+          <a
+            href="/programs"
+            >Programs</a
           >
         </li>
       </ul>
@@ -95,11 +104,25 @@
   #component-imizi .container .logo img {
         max-width: 10rem;
       }
-  #component-imizi .container nav.center {
+  #component-imizi .container nav {
       display: flex;
       justify-content: center;
-      align-items: center;
     }
+  #component-imizi .container nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  #component-imizi .container nav ul li a {
+            font-weight: 600;
+            margin-left: 2rem;
+            -webkit-text-decoration: underline transparent;
+                    text-decoration: underline transparent;
+          }
+  #component-imizi .container nav ul li a:hover {
+              -webkit-text-decoration-color: var(--color-accent, #222);
+                      text-decoration-color: var(--color-accent, #222);
+            }
   #component-imizi .container .right {
       display: flex;
       justify-content: flex-end;
