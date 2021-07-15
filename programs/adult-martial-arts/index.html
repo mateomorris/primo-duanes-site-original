@@ -40,28 +40,6 @@
         <li>
           <a target="_blank" href="/programs"> Programs </a>
         </li>
-        <li class="more">
-          <button type="button" aria-haspopup="true" aria-expanded="false">
-            More <span>&darr;</span>
-          </button>
-          <ul class="secondary">
-            <li>
-              <a target="_blank" href="/"> Home </a>
-            </li>
-            <li>
-              <a target="_blank" href="/contact-us"> Contact </a>
-            </li>
-            <li>
-              <a target="_blank" href="/gallery"> Gallery </a>
-            </li>
-            <li>
-              <a target="_blank" href="/about"> About </a>
-            </li>
-            <li>
-              <a target="_blank" href="/programs"> Programs </a>
-            </li>
-          </ul>
-        </li>
       </ul>
     </nav>
     <ul class="right">
@@ -98,236 +76,81 @@
   referrerpolicy="no-referrer"
 />
 </div>
-          <script type="module">
-        const primo = {
-          id: 'imizi',
-          data: {"nav":[{"label":"Home","url":""},{"label":"About Us","url":"about-us"},{"label":"Gallery","url":"gallery"},{"label":"Programs","url":"programs"}],"social":[{"icon":"twitter","name":"Twitter"},{"icon":"facebook","name":"facebook"},{"icon":"youtube","name":"YouTube"}],"cta":{"url":"cta","title":"Call to Action","active":false},"theme":{"color-text":"#222","color-accent":"#1D4ED8"},"site-nav":[{"link":{"label":"Home","url":"/","active":false}},{"link":{"label":"Contact","url":"/contact-us","active":false}},{"link":{"label":"Gallery","url":"/gallery","active":false}},{"link":{"label":"About","url":"/about","active":false}},{"link":{"label":"Programs","url":"/programs","active":false}}],"logo":{"image":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"title":""}},
-          fields: [{"id":"nhwjk","key":"nav","label":"Navigation Items","value":[{"label":"Home","url":""},{"label":"About Us","url":"about-us"},{"label":"Gallery","url":"gallery"},{"label":"Programs","url":"programs"}],"type":"repeater","fields":[{"id":"aun0f","key":"label","label":"Label","value":"","type":"text"},{"id":"i9whz","key":"url","label":"URL","value":"","type":"url"}]},{"id":"qdxmi","key":"social","label":"Social Links","value":[{"icon":"twitter","name":"Twitter"},{"icon":"facebook","name":"facebook"},{"icon":"youtube","name":"YouTube"}],"type":"repeater","fields":[{"id":"jorxb","key":"icon","label":"Icon","value":"","type":"text"},{"id":"badut","key":"name","label":"Name","value":"","type":"text"},{"id":"ynuen","key":"url","label":"URL","value":"","type":"url"}]},{"id":"fyjpt","key":"cta","label":"Call to Action","value":{"url":"cta","title":"Call to Action","active":false},"type":"link","fields":[]},{"id":"vuknd","key":"theme","label":"Theme","value":{"color-text":"#222","color-accent":"#1D4ED8"},"type":"group","fields":[{"id":"jfhwm","key":"color-text","label":"Text Color","value":"#222","type":"text","fields":[]},{"id":"jxcwy","key":"color-accent","label":"Accent Color","value":"#1D4ED8","type":"text","fields":[]}]},{"id":"uzlti","key":"site-nav","label":"Site Navigation","value":[{"link":{"label":"Home","url":"/","active":false}},{"link":{"label":"Contact","url":"/contact-us","active":false}},{"link":{"label":"Gallery","url":"/gallery","active":false}},{"link":{"label":"About","url":"/about","active":false}},{"link":{"label":"Programs","url":"/programs","active":false}}],"type":"repeater","fields":[{"id":"ehdht","key":"link","label":"Link","value":"","type":"link","fields":[]}]},{"id":"bpyhq","key":"logo","label":"Logo","value":{"image":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"title":""},"type":"group","fields":[{"id":"skhhd","key":"image","label":"Image","value":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"type":"image","fields":[]},{"id":"vbgvn","key":"title","label":"Title","value":"","type":"text","fields":[]}]}]
-        }
-        const container = document.querySelector('.menu')
-const primary = container.querySelector('.tabs > ul')
-const primaryItems = primary.querySelectorAll('ul > li:not(.more)')
-container.classList.add('--jsfied')
-
-const secondary = container.querySelector('.secondary')
-const secondaryItems = secondary.querySelectorAll('li')
-const allItems = container.querySelectorAll('li')
-const moreLi = primary.querySelector('.more')
-const moreBtn = moreLi.querySelector('button')
-moreBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  container.classList.toggle('show-secondary')
-  moreBtn.setAttribute('aria-expanded', container.classList.contains('--show-secondary'))
-})
-
-const doAdapt = () => {
-  // reveal all items for the calculation
-  allItems.forEach((item) => {
-    item.classList.remove('hidden')
-  })
-
-  // hide items that won't fit in the Primary
-  let stopWidth = moreBtn.offsetWidth
-  let hiddenItems = []
-  const primaryWidth = primary.offsetWidth
-  primaryItems.forEach((item, i) => {
-    if(primaryWidth >= stopWidth + item.offsetWidth) {
-      stopWidth += item.offsetWidth
-    } else {
-      item.classList.add('hidden')
-      hiddenItems.push(i)
-    }
-  })
-  
-  // toggle the visibility of More button and items in Secondary
-  if(!hiddenItems.length) {
-    moreLi.classList.add('hidden')
-    container.classList.remove('show-secondary')
-    moreBtn.setAttribute('aria-expanded', false)
-  }
-  else {  
-    secondaryItems.forEach((item, i) => {
-      if(!hiddenItems.includes(i)) {
-        item.classList.add('hidden')
-      }
-    })
-  }
-}
-
-doAdapt() // adapt immediately on load
-window.addEventListener('resize', doAdapt) // adapt on window resize
-
-// hide Secondary on the outside click
-
-document.addEventListener('click', (e) => {
-  let el = e.target
-  while(el) {
-    if(el === secondary || el === moreBtn) {
-      return;
-    }
-    el = el.parentNode
-  }
-  container.classList.remove('show-secondary')
-  moreBtn.setAttribute('aria-expanded', false)
-})</script>
+          
         </div>
         <style type="text/css">#component-vffam {
   padding: 1rem 0;
-  @-webkit-keyframes nav-secondary {
-    0% {
-      opacity: 0;
-      transform: translateY(-1em);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-  #component-vffam .container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    place-items: space-between center;
-  }
-  #component-vffam .container .logo img {
-        max-width: 10rem;
-      }
-  #component-vffam .container nav {
-      display: flex;
-      justify-content: center;
-    }
-  #component-vffam .container nav ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-  #component-vffam .container nav ul li a {
-            font-weight: 600;
-            margin-left: 2rem;
-            -webkit-text-decoration: underline transparent;
-                    text-decoration: underline transparent;
-          }
-  #component-vffam .container nav ul li a:hover {
-              -webkit-text-decoration-color: var(--color-accent, #222);
-                      text-decoration-color: var(--color-accent, #222);
-            }
-  #component-vffam .container .right {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-  #component-vffam .container .right .social-link {
-        padding-right: 1rem;
-      }
-  #component-vffam .container .right .social-link i:hover {
-          color: var(--color-accent);
-        }
-  #component-vffam .container .right .cta {
-        display: block;
-        padding: 0.5rem 1rem;
-        border: 1px solid var(--color-accent);
-        border-radius: 0.25rem;
-      }
-  #component-vffam .container .right .cta:hover {
-          color: white;
-          background: var(--color-accent);
-        }
-  #component-vffam {
-  --color-bg: #D51E49;
-  --color-bg--dark: darken(var(--color-bg), 7%);
-  --color-bg--darker: darken(var(--color-bg), 14%);
-  --color-text: #FAF3DD;
 }
   #component-vffam .menu {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
   }
   #component-vffam .menu .logo {
       font-weight: 600;
-      background: gainsboro;
       padding: 0 2rem;
-      flex: 1;
       display: flex;
       align-items: center;
     }
+  #component-vffam .menu .logo img {
+        max-width: 10rem;
+      }
+  #component-vffam .menu nav {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+  #component-vffam .menu nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  #component-vffam .menu nav ul li a {
+            font-weight: 600;
+            margin-left: 2rem;
+            -webkit-text-decoration: underline transparent;
+                    text-decoration: underline transparent;
+          }
+  #component-vffam .menu nav ul li a:hover {
+              -webkit-text-decoration-color: var(--color-accent, #222);
+                      text-decoration-color: var(--color-accent, #222);
+            }
+  #component-vffam .menu .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  #component-vffam .menu .right .social-link {
+        padding-right: 1rem;
+      }
+  #component-vffam .menu .right .social-link i:hover {
+          color: var(--color-accent);
+        }
+  #component-vffam .menu .right .cta {
+        display: block;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--color-accent);
+        border-radius: 0.25rem;
+      }
+  #component-vffam .menu .right .cta:hover {
+          color: white;
+          background: var(--color-accent);
+        }
   #component-vffam .tabs {
     position: relative;
   }
-  #component-vffam .tabs .hidden {
-      display: none;
-    }
-  #component-vffam .tabs:not(.--jsfied) {
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-  #component-vffam .tabs a,
-  #component-vffam .tabs button {
-      width: 100%;
-      height: 100%;
-      display: block;
-      font-size: 1em;
-      line-height: 1.2;
-      text-align: center;
-      color: var(--color-text);
-      background-color: var(--color-bg);
-    }
   #component-vffam .tabs .primary {
       display: flex;
-      flex: 1;
     }
-  #component-vffam .tabs .primary > li {
-        flex-grow: 1;
-        background-color: var(--color-bg);
+  @media (min-width: 900px) {
+      #component-vffam header .menu {
+        flex-direction: row;
       }
-  #component-vffam .tabs .primary > li + li {
-          border-left: 1px solid var(--color-bg--dark);
+        #component-vffam header .menu nav {
+          margin: 0;
         }
-  #component-vffam .tabs .primary > li > a,
-      #component-vffam .tabs .primary > li > button {
-          white-space: nowrap;
-          padding: 1em 0.6em;
-          box-shadow: inset 0 -0.2em 0 var(--color-bg--dark);
-        }
-  #component-vffam .tabs .primary .more {
-        background-color: var(--color-bg--dark);
-      }
-  #component-vffam .tabs .primary .more > button span {
-          display: inline-block;
-          transition: transform 0.2s;
-        }
-  #component-vffam .tabs .secondary {
-      max-width: 100%;
-      min-width: 10em;
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      box-shadow: 0 0.3em 0.5em rgba(#000, 0.3);
-      -webkit-animation: nav-secondary 0.2s;
-              animation: nav-secondary 0.2s;
-    }
-  #component-vffam .tabs .secondary li {
-        border-top: 1px solid var(--color-bg);
-        background-color: var(--color-bg--dark);
-      }
-  #component-vffam .show-secondary .secondary {
-    display: block;
-  }
-  #component-vffam .show-secondary .primary .more > button span {
-      transform: rotate(180deg);
-    }
-  @keyframes nav-secondary {
-    0% {
-      opacity: 0;
-      transform: translateY(-1em);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }</style>
       </div>
       
@@ -340,28 +163,28 @@ document.addEventListener('click', (e) => {
 <img src="https://images.unsplash.com/photo-1545058197-68c4c39524bb?ixid&#x3D;MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8MTl8NDg2MTQzNXx8ZW58MHx8fHw%3D&amp;ixlib&#x3D;rb-1.2.1&amp;auto&#x3D;format&amp;fit&#x3D;crop&amp;w&#x3D;900&amp;q&#x3D;60" alt="￰">￰</div>
           
         </div>
-        <style type="text/css">#component-ihhfw {
+        <style type="text/css">#component-pvaxa {
   --verydarkgray: #222222;
   background-color: rgba(10, 10, 10, .8);
   color: white;
   padding: 5rem 0;
   position: relative;
 }
-  #component-ihhfw header {
+  #component-pvaxa header {
     background-blend-mode: multiply;
     z-index: 1;
     position: relative;
   }
-  #component-ihhfw header .heading {
+  #component-pvaxa header .heading {
       font-size: 2rem;
       font-weight: 600;
       line-height: 1.2;
       margin-bottom: 1rem;
     }
-  #component-ihhfw header .subheading {
+  #component-pvaxa header .subheading {
       font-size: 1.25rem;
     }
-  #component-ihhfw img {
+  #component-pvaxa img {
     opacity: 1;
     position: absolute;
     inset: 0;
@@ -468,7 +291,7 @@ document.addEventListener('click', (e) => {
   moreBtn.setAttribute('aria-expanded', false)
 })</script>
         </div>
-        <style type="text/css">#component-dvdnh {
+        <style type="text/css">#component-bbegq {
   --color-bg: #D51E49;
   --color-bg--dark: darken(var(--color-bg), 7%);
   --color-bg--darker: darken(var(--color-bg), 14%);
@@ -485,12 +308,12 @@ document.addEventListener('click', (e) => {
     }
   }
 }
-  #component-dvdnh .menu {
+  #component-bbegq .menu {
     display: flex;
     justify-content: space-between;
     width: 100%;
   }
-  #component-dvdnh .menu .logo {
+  #component-bbegq .menu .logo {
       font-weight: 600;
       background: gainsboro;
       padding: 0 2rem;
@@ -498,18 +321,18 @@ document.addEventListener('click', (e) => {
       display: flex;
       align-items: center;
     }
-  #component-dvdnh .tabs {
+  #component-bbegq .tabs {
     position: relative;
   }
-  #component-dvdnh .tabs .hidden {
+  #component-bbegq .tabs .hidden {
       display: none;
     }
-  #component-dvdnh .tabs:not(.--jsfied) {
+  #component-bbegq .tabs:not(.--jsfied) {
       overflow: auto;
       -webkit-overflow-scrolling: touch;
     }
-  #component-dvdnh .tabs a,
-  #component-dvdnh .tabs button {
+  #component-bbegq .tabs a,
+  #component-bbegq .tabs button {
       width: 100%;
       height: 100%;
       display: block;
@@ -519,31 +342,31 @@ document.addEventListener('click', (e) => {
       color: var(--color-text);
       background-color: var(--color-bg);
     }
-  #component-dvdnh .tabs .primary {
+  #component-bbegq .tabs .primary {
       display: flex;
       flex: 1;
     }
-  #component-dvdnh .tabs .primary > li {
+  #component-bbegq .tabs .primary > li {
         flex-grow: 1;
         background-color: var(--color-bg);
       }
-  #component-dvdnh .tabs .primary > li + li {
+  #component-bbegq .tabs .primary > li + li {
           border-left: 1px solid var(--color-bg--dark);
         }
-  #component-dvdnh .tabs .primary > li > a,
-      #component-dvdnh .tabs .primary > li > button {
+  #component-bbegq .tabs .primary > li > a,
+      #component-bbegq .tabs .primary > li > button {
           white-space: nowrap;
           padding: 1em 0.6em;
           box-shadow: inset 0 -0.2em 0 var(--color-bg--dark);
         }
-  #component-dvdnh .tabs .primary .more {
+  #component-bbegq .tabs .primary .more {
         background-color: var(--color-bg--dark);
       }
-  #component-dvdnh .tabs .primary .more > button span {
+  #component-bbegq .tabs .primary .more > button span {
           display: inline-block;
           transition: transform 0.2s;
         }
-  #component-dvdnh .tabs .secondary {
+  #component-bbegq .tabs .secondary {
       max-width: 100%;
       min-width: 10em;
       display: none;
@@ -554,14 +377,14 @@ document.addEventListener('click', (e) => {
       -webkit-animation: nav-secondary 0.2s;
               animation: nav-secondary 0.2s;
     }
-  #component-dvdnh .tabs .secondary li {
+  #component-bbegq .tabs .secondary li {
         border-top: 1px solid var(--color-bg);
         background-color: var(--color-bg--dark);
       }
-  #component-dvdnh .show-secondary .secondary {
+  #component-bbegq .show-secondary .secondary {
     display: block;
   }
-  #component-dvdnh .show-secondary .primary .more > button span {
+  #component-bbegq .show-secondary .primary .more > button span {
       transform: rotate(180deg);
     }
   @keyframes nav-secondary {
@@ -604,23 +427,23 @@ document.addEventListener('click', (e) => {
 </div>
           
         </div>
-        <style type="text/css">#component-aruqt {
+        <style type="text/css">#component-errlb {
   padding: 4rem 0;
 }
-  #component-aruqt ul li {
+  #component-errlb ul li {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
       place-items: center;
     }
-  #component-aruqt ul li figure {
+  #component-errlb ul li figure {
         grid-column: 1 / 3;
         grid-row: 1;
         display: grid;
         grid-template-columns: auto 4rem auto;
         grid-template-rows: auto 8rem auto;
       }
-  #component-aruqt ul li figure img {
+  #component-errlb ul li figure img {
           height: 100%;
           width: 100%;
           -o-object-fit: cover;
@@ -630,55 +453,55 @@ document.addEventListener('click', (e) => {
           grid-row: 1 / 3;
           z-index: 1;
         }
-  #component-aruqt ul li figure img:nth-child(2) {
+  #component-errlb ul li figure img:nth-child(2) {
           grid-column: 2 / 4;
           grid-row: 2 / 4;
           z-index: 2;
         }
-  #component-aruqt ul li .content {
+  #component-errlb ul li .content {
         grid-column: 1 / 3;
       }
-  #component-aruqt ul li .content .body {
+  #component-errlb ul li .content .body {
           margin-bottom: 1.5rem;
         }
-  #component-aruqt ul li .content .button {
+  #component-errlb ul li .content .button {
           background: var(--color-accent);
           color: white;
           padding: 1rem 2rem;
           border-radius: 5rem;
           display: inline-block;
         }
-  #component-aruqt ul li:nth-child(even) figure img:first-child {
+  #component-errlb ul li:nth-child(even) figure img:first-child {
           grid-column: 2 / 4;
         }
-  #component-aruqt ul li:nth-child(even) figure img:nth-child(2) {
+  #component-errlb ul li:nth-child(even) figure img:nth-child(2) {
           grid-column: 1 / 3;
         }
-  #component-aruqt ul li:not(:last-child) {
+  #component-errlb ul li:not(:last-child) {
       padding-bottom: 5rem;
       margin-bottom: 4rem;
       border-bottom: 1px solid #eee;
     }
   @media (min-width: 600px) {
-      #component-aruqt ul li {
+      #component-errlb ul li {
         grid-template-columns: 1fr 1fr;
       }
-        #component-aruqt ul li figure {
+        #component-errlb ul li figure {
           grid-column: 1;
         }
-        #component-aruqt ul li .content {
+        #component-errlb ul li .content {
           grid-column: 2;
         }
-        #component-aruqt ul li:nth-child(even) figure {
+        #component-errlb ul li:nth-child(even) figure {
           grid-column: 2;
         }
-          #component-aruqt ul li:nth-child(even) figure img:first-child {
+          #component-errlb ul li:nth-child(even) figure img:first-child {
             grid-column: 2 / 4;
           }
-          #component-aruqt ul li:nth-child(even) figure img:nth-child(2) {
+          #component-errlb ul li:nth-child(even) figure img:nth-child(2) {
             grid-column: 1 / 3;
           }
-        #component-aruqt ul li:nth-child(even) .content {
+        #component-errlb ul li:nth-child(even) .content {
           grid-column: 1;
         }
   }</style>
@@ -710,22 +533,22 @@ document.addEventListener('click', (e) => {
 </div>
           
         </div>
-        <style type="text/css">#component-ganwg section {
+        <style type="text/css">#component-gsxrn section {
     border-top: 1px solid var(--color-light, #eee);
     border-bottom: 1px solid var(--color-light, #eee);
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-    #component-ganwg section ul {
+    #component-gsxrn section ul {
       display: grid;
       gap: 4rem;
     }
   @media (min-width: 600px) {
-    #component-ganwg .heading {
+    #component-gsxrn .heading {
       text-align: center;
     }
 
-    #component-ganwg ul {
+    #component-gsxrn ul {
       grid-template-columns: 1fr 1fr;
     }
   }</style>
@@ -757,14 +580,48 @@ document.addEventListener('click', (e) => {
       </div>
       <div>
         <h4>Company</h4>
-        <ul>
-          <li>About Us</li>
-          <li>Programs</li>
-          <li>Gallery</li>
+        <ul class="link-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/contact-us">Contact</a>
+          </li>
+          <li>
+            <a href="/gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/programs">Programs</a>
+          </li>
         </ul>
       </div>
     </div>
-    <a href="https://primo.af" class="primo">built primo</a>
+		<div class="sub-footer">
+    	<a href="https://primo.af" class="primo">built primo</a>
+      <div class="social">
+        <span>Follow us:</span>
+        <ul>
+          <li>
+            <a href="#">
+            	<i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            	<i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            	<i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
 <link
@@ -816,6 +673,33 @@ document.addEventListener('click', (e) => {
             font-size: 1.25rem;
             margin-bottom: 0.25rem;
           }
+    #component-yrufk footer .container .content .link-list a {
+            text-decoration: underline;
+          }
+    #component-yrufk footer .container .sub-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #ddd;
+        margin-top: 2rem;
+        padding-top: 2rem;
+      }
+    #component-yrufk footer .container .sub-footer .social {
+          display: flex;
+        }
+    #component-yrufk footer .container .sub-footer .social span {
+            margin-right: 0.5rem;
+            font-weight: 600;
+          }
+    #component-yrufk footer .container .sub-footer .social ul {
+            display: flex;
+          }
+    #component-yrufk footer .container .sub-footer .social ul li a {
+              margin-left: 0.75rem;
+            }
+    #component-yrufk footer .container .sub-footer .social ul li a:hover {
+                opacity: 0.75;
+              }
   @media (min-width: 600px) {
         #component-yrufk footer .container .content {
           grid-template-columns: 2fr 1fr 1fr;

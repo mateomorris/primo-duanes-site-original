@@ -21,7 +21,7 @@
           <div><header>
   <div class="container menu">
     <a class="logo" href="/">
-      <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo1.jpg" />
+      <img src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png" />
     </a>
     <nav class="tabs">
       <ul class="primary">
@@ -40,47 +40,25 @@
         <li>
           <a target="_blank" href="/programs"> Programs </a>
         </li>
-        <li class="more">
-          <button type="button" aria-haspopup="true" aria-expanded="false">
-            More <span>&darr;</span>
-          </button>
-          <ul class="secondary">
-            <li>
-              <a target="_blank" href="/"> Home </a>
-            </li>
-            <li>
-              <a target="_blank" href="/contact-us"> Contact </a>
-            </li>
-            <li>
-              <a target="_blank" href="/gallery"> Gallery </a>
-            </li>
-            <li>
-              <a target="_blank" href="/about"> About </a>
-            </li>
-            <li>
-              <a target="_blank" href="/programs"> Programs </a>
-            </li>
-          </ul>
-        </li>
       </ul>
     </nav>
     <ul class="right">
       <li class="social-link">
-        <a href="">
-          <span class="sr-only">Twitter</span>
-          <i class="fab fa-twitter"></i>
+        <a href="https://twitter.com">
+          <span class="sr-only"></span>
+          <i class="fab fa-fab fa-twitter"></i>
         </a>
       </li>
             <li class="social-link">
-        <a href="">
-          <span class="sr-only">facebook</span>
-          <i class="fab fa-facebook"></i>
+        <a href="https://facebook.com">
+          <span class="sr-only"></span>
+          <i class="fab fa-fab fa-facebook"></i>
         </a>
       </li>
             <li class="social-link">
-        <a href="">
-          <span class="sr-only">YouTube</span>
-          <i class="fab fa-youtube"></i>
+        <a href="https://youtube.com">
+          <span class="sr-only"></span>
+          <i class="fab fa-fab fa-youtube"></i>
         </a>
       </li>
        
@@ -98,236 +76,81 @@
   referrerpolicy="no-referrer"
 />
 </div>
-          <script type="module">
-        const primo = {
-          id: 'imizi',
-          data: {"nav":[{"label":"Home","url":""},{"label":"About Us","url":"about-us"},{"label":"Gallery","url":"gallery"},{"label":"Programs","url":"programs"}],"social":[{"icon":"twitter","name":"Twitter"},{"icon":"facebook","name":"facebook"},{"icon":"youtube","name":"YouTube"}],"cta":{"url":"cta","title":"Call to Action","active":false},"theme":{"color-text":"#222","color-accent":"#1D4ED8"},"site-nav":[{"link":{"label":"Home","url":"/","active":false}},{"link":{"label":"Contact","url":"/contact-us","active":false}},{"link":{"label":"Gallery","url":"/gallery","active":false}},{"link":{"label":"About","url":"/about","active":false}},{"link":{"label":"Programs","url":"/programs","active":false}}],"logo":{"image":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"title":""}},
-          fields: [{"id":"nhwjk","key":"nav","label":"Navigation Items","value":[{"label":"Home","url":""},{"label":"About Us","url":"about-us"},{"label":"Gallery","url":"gallery"},{"label":"Programs","url":"programs"}],"type":"repeater","fields":[{"id":"aun0f","key":"label","label":"Label","value":"","type":"text"},{"id":"i9whz","key":"url","label":"URL","value":"","type":"url"}]},{"id":"qdxmi","key":"social","label":"Social Links","value":[{"icon":"twitter","name":"Twitter"},{"icon":"facebook","name":"facebook"},{"icon":"youtube","name":"YouTube"}],"type":"repeater","fields":[{"id":"jorxb","key":"icon","label":"Icon","value":"","type":"text"},{"id":"badut","key":"name","label":"Name","value":"","type":"text"},{"id":"ynuen","key":"url","label":"URL","value":"","type":"url"}]},{"id":"fyjpt","key":"cta","label":"Call to Action","value":{"url":"cta","title":"Call to Action","active":false},"type":"link","fields":[]},{"id":"vuknd","key":"theme","label":"Theme","value":{"color-text":"#222","color-accent":"#1D4ED8"},"type":"group","fields":[{"id":"jfhwm","key":"color-text","label":"Text Color","value":"#222","type":"text","fields":[]},{"id":"jxcwy","key":"color-accent","label":"Accent Color","value":"#1D4ED8","type":"text","fields":[]}]},{"id":"uzlti","key":"site-nav","label":"Site Navigation","value":[{"link":{"label":"Home","url":"/","active":false}},{"link":{"label":"Contact","url":"/contact-us","active":false}},{"link":{"label":"Gallery","url":"/gallery","active":false}},{"link":{"label":"About","url":"/about","active":false}},{"link":{"label":"Programs","url":"/programs","active":false}}],"type":"repeater","fields":[{"id":"ehdht","key":"link","label":"Link","value":"","type":"link","fields":[]}]},{"id":"bpyhq","key":"logo","label":"Logo","value":{"image":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"title":""},"type":"group","fields":[{"id":"skhhd","key":"image","label":"Image","value":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"type":"image","fields":[]},{"id":"vbgvn","key":"title","label":"Title","value":"","type":"text","fields":[]}]}]
-        }
-        const container = document.querySelector('.menu')
-const primary = container.querySelector('.tabs > ul')
-const primaryItems = primary.querySelectorAll('ul > li:not(.more)')
-container.classList.add('--jsfied')
-
-const secondary = container.querySelector('.secondary')
-const secondaryItems = secondary.querySelectorAll('li')
-const allItems = container.querySelectorAll('li')
-const moreLi = primary.querySelector('.more')
-const moreBtn = moreLi.querySelector('button')
-moreBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  container.classList.toggle('show-secondary')
-  moreBtn.setAttribute('aria-expanded', container.classList.contains('--show-secondary'))
-})
-
-const doAdapt = () => {
-  // reveal all items for the calculation
-  allItems.forEach((item) => {
-    item.classList.remove('hidden')
-  })
-
-  // hide items that won't fit in the Primary
-  let stopWidth = moreBtn.offsetWidth
-  let hiddenItems = []
-  const primaryWidth = primary.offsetWidth
-  primaryItems.forEach((item, i) => {
-    if(primaryWidth >= stopWidth + item.offsetWidth) {
-      stopWidth += item.offsetWidth
-    } else {
-      item.classList.add('hidden')
-      hiddenItems.push(i)
-    }
-  })
-  
-  // toggle the visibility of More button and items in Secondary
-  if(!hiddenItems.length) {
-    moreLi.classList.add('hidden')
-    container.classList.remove('show-secondary')
-    moreBtn.setAttribute('aria-expanded', false)
-  }
-  else {  
-    secondaryItems.forEach((item, i) => {
-      if(!hiddenItems.includes(i)) {
-        item.classList.add('hidden')
-      }
-    })
-  }
-}
-
-doAdapt() // adapt immediately on load
-window.addEventListener('resize', doAdapt) // adapt on window resize
-
-// hide Secondary on the outside click
-
-document.addEventListener('click', (e) => {
-  let el = e.target
-  while(el) {
-    if(el === secondary || el === moreBtn) {
-      return;
-    }
-    el = el.parentNode
-  }
-  container.classList.remove('show-secondary')
-  moreBtn.setAttribute('aria-expanded', false)
-})</script>
+          
         </div>
         <style type="text/css">#component-imizi {
   padding: 1rem 0;
-  @-webkit-keyframes nav-secondary {
-    0% {
-      opacity: 0;
-      transform: translateY(-1em);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-  #component-imizi .container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    place-items: space-between center;
-  }
-  #component-imizi .container .logo img {
-        max-width: 10rem;
-      }
-  #component-imizi .container nav {
-      display: flex;
-      justify-content: center;
-    }
-  #component-imizi .container nav ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-  #component-imizi .container nav ul li a {
-            font-weight: 600;
-            margin-left: 2rem;
-            -webkit-text-decoration: underline transparent;
-                    text-decoration: underline transparent;
-          }
-  #component-imizi .container nav ul li a:hover {
-              -webkit-text-decoration-color: var(--color-accent, #222);
-                      text-decoration-color: var(--color-accent, #222);
-            }
-  #component-imizi .container .right {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-  #component-imizi .container .right .social-link {
-        padding-right: 1rem;
-      }
-  #component-imizi .container .right .social-link i:hover {
-          color: var(--color-accent);
-        }
-  #component-imizi .container .right .cta {
-        display: block;
-        padding: 0.5rem 1rem;
-        border: 1px solid var(--color-accent);
-        border-radius: 0.25rem;
-      }
-  #component-imizi .container .right .cta:hover {
-          color: white;
-          background: var(--color-accent);
-        }
-  #component-imizi {
-  --color-bg: #D51E49;
-  --color-bg--dark: darken(var(--color-bg), 7%);
-  --color-bg--darker: darken(var(--color-bg), 14%);
-  --color-text: #FAF3DD;
 }
   #component-imizi .menu {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
   }
   #component-imizi .menu .logo {
       font-weight: 600;
-      background: gainsboro;
       padding: 0 2rem;
-      flex: 1;
       display: flex;
       align-items: center;
     }
+  #component-imizi .menu .logo img {
+        max-width: 10rem;
+      }
+  #component-imizi .menu nav {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+  #component-imizi .menu nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  #component-imizi .menu nav ul li a {
+            font-weight: 600;
+            margin-left: 2rem;
+            -webkit-text-decoration: underline transparent;
+                    text-decoration: underline transparent;
+          }
+  #component-imizi .menu nav ul li a:hover {
+              -webkit-text-decoration-color: var(--color-accent, #222);
+                      text-decoration-color: var(--color-accent, #222);
+            }
+  #component-imizi .menu .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  #component-imizi .menu .right .social-link {
+        padding-right: 1rem;
+      }
+  #component-imizi .menu .right .social-link i:hover {
+          color: var(--color-accent);
+        }
+  #component-imizi .menu .right .cta {
+        display: block;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--color-accent);
+        border-radius: 0.25rem;
+      }
+  #component-imizi .menu .right .cta:hover {
+          color: white;
+          background: var(--color-accent);
+        }
   #component-imizi .tabs {
     position: relative;
   }
-  #component-imizi .tabs .hidden {
-      display: none;
-    }
-  #component-imizi .tabs:not(.--jsfied) {
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-  #component-imizi .tabs a,
-  #component-imizi .tabs button {
-      width: 100%;
-      height: 100%;
-      display: block;
-      font-size: 1em;
-      line-height: 1.2;
-      text-align: center;
-      color: var(--color-text);
-      background-color: var(--color-bg);
-    }
   #component-imizi .tabs .primary {
       display: flex;
-      flex: 1;
     }
-  #component-imizi .tabs .primary > li {
-        flex-grow: 1;
-        background-color: var(--color-bg);
+  @media (min-width: 900px) {
+      #component-imizi header .menu {
+        flex-direction: row;
       }
-  #component-imizi .tabs .primary > li + li {
-          border-left: 1px solid var(--color-bg--dark);
+        #component-imizi header .menu nav {
+          margin: 0;
         }
-  #component-imizi .tabs .primary > li > a,
-      #component-imizi .tabs .primary > li > button {
-          white-space: nowrap;
-          padding: 1em 0.6em;
-          box-shadow: inset 0 -0.2em 0 var(--color-bg--dark);
-        }
-  #component-imizi .tabs .primary .more {
-        background-color: var(--color-bg--dark);
-      }
-  #component-imizi .tabs .primary .more > button span {
-          display: inline-block;
-          transition: transform 0.2s;
-        }
-  #component-imizi .tabs .secondary {
-      max-width: 100%;
-      min-width: 10em;
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      box-shadow: 0 0.3em 0.5em rgba(#000, 0.3);
-      -webkit-animation: nav-secondary 0.2s;
-              animation: nav-secondary 0.2s;
-    }
-  #component-imizi .tabs .secondary li {
-        border-top: 1px solid var(--color-bg);
-        background-color: var(--color-bg--dark);
-      }
-  #component-imizi .show-secondary .secondary {
-    display: block;
-  }
-  #component-imizi .show-secondary .primary .more > button span {
-      transform: rotate(180deg);
-    }
-  @keyframes nav-secondary {
-    0% {
-      opacity: 0;
-      transform: translateY(-1em);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }</style>
       </div>
       
@@ -345,10 +168,10 @@ document.addEventListener('click', (e) => {
 </header></div>
           
         </div>
-        <style type="text/css">#component-nplrs {
+        <style type="text/css">#component-gcdqh {
   --verydarkgray: #222222;
 }
-  #component-nplrs header {
+  #component-gcdqh header {
     padding: 10rem 0;
     background: center / cover no-repeat;
     background-image: url(https://placeimg.com/1000/1000/tech);
@@ -357,16 +180,16 @@ document.addEventListener('click', (e) => {
     text-align: center;
     color: white;
   }
-  #component-nplrs header .container .heading {
+  #component-gcdqh header .container .heading {
         font-size: 2rem;
         font-weight: 600;
         line-height: 1.2;
         margin-bottom: 1rem;
       }
-  #component-nplrs header .container .subheading {
+  #component-gcdqh header .container .subheading {
         font-size: 1.25rem;
       }
-  #component-nplrs header .container .links {
+  #component-gcdqh header .container .links {
         display: grid;
         align-items: center;
         grid-template-columns: 1fr;
@@ -376,7 +199,7 @@ document.addEventListener('click', (e) => {
         margin: 0 auto;
         margin-top: 1rem;
       }
-  #component-nplrs header .container .links .button {
+  #component-gcdqh header .container .links .button {
           text-transform: uppercase;
           background-color: white;
           color: var(--verydarkgray);
@@ -388,18 +211,18 @@ document.addEventListener('click', (e) => {
           border-radius: 2rem;
           box-shadow: 0px 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
         }
-  #component-nplrs header .container .links .button:hover {
+  #component-gcdqh header .container .links .button:hover {
             color: white;
             background: var(--color-accent);
           }
   @media (min-width: 600px) {
-        #component-nplrs header .container .heading {
+        #component-gcdqh header .container .heading {
           font-size: 3rem;
         }
-        #component-nplrs header .container .subheading {
+        #component-gcdqh header .container .subheading {
           font-size: 1.5rem;
         }
-        #component-nplrs header .container .links {
+        #component-gcdqh header .container .links {
           grid-template-columns: repeat( auto-fill, minmax(250px, auto) );
         }
   }</style>
@@ -442,19 +265,19 @@ document.addEventListener('click', (e) => {
 </div>
           
         </div>
-        <style type="text/css">#component-kuuqw {
+        <style type="text/css">#component-alsvc {
   padding: 3rem 0;
 }
-  #component-kuuqw section {
+  #component-alsvc section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
   }
-  #component-kuuqw section .card {
+  #component-alsvc section .card {
       background: white;
       border: 1px solid gainsboro;
     }
-  #component-kuuqw section .card img {
+  #component-alsvc section .card img {
         height: 15rem;
         width: 100%;
         -o-object-fit: cover;
@@ -462,20 +285,20 @@ document.addEventListener('click', (e) => {
         -o-object-position: center;
            object-position: center;
       }
-  #component-kuuqw section .card .body {
+  #component-alsvc section .card .body {
         padding: 2rem;
       }
-  #component-kuuqw section .card .body .title {
+  #component-alsvc section .card .body .title {
           font-weight: 600;
           font-size: 1.5rem;
         }
-  #component-kuuqw section .card .body .subtitle {
+  #component-alsvc section .card .body .subtitle {
         }
   @media (max-width: 600px) {
-    #component-kuuqw section {
+    #component-alsvc section {
       grid-template-columns: 1fr;
     }
-        #component-kuuqw section .card img {
+        #component-alsvc section .card img {
           height: 10rem;
         }
   }</style>
@@ -494,37 +317,37 @@ document.addEventListener('click', (e) => {
 </div>
           
         </div>
-        <style type="text/css">#component-jaagh {
+        <style type="text/css">#component-wnixk {
   padding: 3rem 0;
 }
-  #component-jaagh section .heading {
+  #component-wnixk section .heading {
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 1.5rem;
     }
-  #component-jaagh section .images {
+  #component-wnixk section .images {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       grid-gap: 2rem;
     }
-  #component-jaagh section .images img {
+  #component-wnixk section .images img {
         width: 100%;
         -o-object-fit: contain;
            object-fit: contain;
         -o-object-position: center;
            object-position: center;
       }
-  #component-jaagh section .images .body {
+  #component-wnixk section .images .body {
         padding: 2rem;
       }
-  #component-jaagh section .images .body .title {
+  #component-wnixk section .images .body .title {
           font-weight: 600;
           font-size: 1.5rem;
         }
-  #component-jaagh section .images .body .subtitle {
+  #component-wnixk section .images .body .subtitle {
         }
   @media (max-width: 600px) {
-      #component-jaagh section .images {
+      #component-wnixk section .images {
         grid-template-columns: 1fr;
       }
   }</style>
@@ -560,72 +383,72 @@ document.addEventListener('click', (e) => {
 </section></div>
           
         </div>
-        <style type="text/css">#component-ryvdu {
+        <style type="text/css">#component-jbocb {
   padding: 3rem 0;
 }
-  #component-ryvdu section {
+  #component-jbocb section {
     display: grid;
     grid-template-columns: 1fr;
   }
-  #component-ryvdu section .heading {
+  #component-jbocb section .heading {
       font-size: 2rem;
       font-weight: bold;
       line-height: 1.2;
       margin-bottom: 2rem;
     }
-  #component-ryvdu section .events {
+  #component-jbocb section .events {
       display: grid;
       grid-template-columns: 1fr;
       grid-gap: 3rem;
       margin-bottom: 2rem;
     }
-  #component-ryvdu section .events .item dt {
+  #component-jbocb section .events .item dt {
           font-size: 1.75rem;
           line-height: 1.1;
           margin-bottom: 1rem;
           font-weight: 500;
         }
-  #component-ryvdu section .events .item dd {
+  #component-jbocb section .events .item dd {
           margin-bottom: 1rem;
         }
-  #component-ryvdu section .events .item dd .date {
+  #component-jbocb section .events .item dd .date {
             font-size: 1.25rem;
             font-weight: 500;
           }
-  #component-ryvdu section .events .item dd .date span {
+  #component-jbocb section .events .item dd .date span {
               display: block;
             }
-  #component-ryvdu section .events .item dd .location {
+  #component-jbocb section .events .item dd .location {
             filter: brightness(1.5);
           }
-  #component-ryvdu section .events .item a {
+  #component-jbocb section .events .item a {
           border: 2px solid var(--color-accent);
           padding: 0.5rem 1rem;
           display: inline-block;
         }
-  #component-ryvdu section .events .item a:hover {
+  #component-jbocb section .events .item a:hover {
             color: white;
             background: var(--color-accent);
           }
-  #component-ryvdu section .events .item:not(:last-child) {
+  #component-jbocb section .events .item:not(:last-child) {
           border-bottom: 1px solid #eee;
           padding-bottom: 3rem;
         }
-  #component-ryvdu section .call-to-action {
+  #component-jbocb section .call-to-action {
       justify-self: end;
       font-size: 1.5rem;
       -webkit-text-decoration: underline #222;
               text-decoration: underline #222;
     }
-  #component-ryvdu section .call-to-action:hover {
+  #component-jbocb section .call-to-action:hover {
         -webkit-text-decoration-color: transparent;
                 text-decoration-color: transparent;
       }
   @media (min-width: 900px) {
-      #component-ryvdu section .events {
+      #component-jbocb section .events {
         grid-template-columns: 1fr 1fr 1fr;
       }
-        #component-ryvdu section .events .item {
+        #component-jbocb section .events .item {
           border-bottom: 0 !important;
           padding-bottom: 0 !important;
         }
@@ -646,22 +469,22 @@ document.addEventListener('click', (e) => {
 </div>
           
         </div>
-        <style type="text/css">#component-gehmg {
+        <style type="text/css">#component-csdcj {
   padding: 3rem 0;
   border-top: 1px solid #eee;
   border-bottom: 1px solid #eee;
 }
-  #component-gehmg section .heading {
+  #component-csdcj section .heading {
       font-size: 2.5rem;
       font-weight: 600;
       margin-bottom: 1.5rem;
       text-align: center;
     }
-  #component-gehmg section .images {
+  #component-csdcj section .images {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
-  #component-gehmg section .images img {
+  #component-csdcj section .images img {
         padding: 2rem;
         align-self: center;
         filter: grayscale(2);
@@ -673,7 +496,7 @@ document.addEventListener('click', (e) => {
         justify-self: center;
       }
   @media (max-width: 600px) {
-      #component-gehmg section .images {
+      #component-csdcj section .images {
         grid-template-columns: 1fr;
       }
   }</style>
@@ -705,14 +528,48 @@ document.addEventListener('click', (e) => {
       </div>
       <div>
         <h4>Company</h4>
-        <ul>
-          <li>About Us</li>
-          <li>Programs</li>
-          <li>Gallery</li>
+        <ul class="link-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/contact-us">Contact</a>
+          </li>
+          <li>
+            <a href="/gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/programs">Programs</a>
+          </li>
         </ul>
       </div>
     </div>
-    <a href="https://primo.af" class="primo">built primo</a>
+		<div class="sub-footer">
+    	<a href="https://primo.af" class="primo">built primo</a>
+      <div class="social">
+        <span>Follow us:</span>
+        <ul>
+          <li>
+            <a href="#">
+            	<i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            	<i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            	<i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
 <link
@@ -764,6 +621,33 @@ document.addEventListener('click', (e) => {
             font-size: 1.25rem;
             margin-bottom: 0.25rem;
           }
+    #component-yprqy footer .container .content .link-list a {
+            text-decoration: underline;
+          }
+    #component-yprqy footer .container .sub-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #ddd;
+        margin-top: 2rem;
+        padding-top: 2rem;
+      }
+    #component-yprqy footer .container .sub-footer .social {
+          display: flex;
+        }
+    #component-yprqy footer .container .sub-footer .social span {
+            margin-right: 0.5rem;
+            font-weight: 600;
+          }
+    #component-yprqy footer .container .sub-footer .social ul {
+            display: flex;
+          }
+    #component-yprqy footer .container .sub-footer .social ul li a {
+              margin-left: 0.75rem;
+            }
+    #component-yprqy footer .container .sub-footer .social ul li a:hover {
+                opacity: 0.75;
+              }
   @media (min-width: 600px) {
         #component-yprqy footer .container .content {
           grid-template-columns: 2fr 1fr 1fr;

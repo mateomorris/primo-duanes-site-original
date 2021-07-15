@@ -40,28 +40,6 @@
         <li>
           <a target="_blank" href="/programs"> Programs </a>
         </li>
-        <li class="more">
-          <button type="button" aria-haspopup="true" aria-expanded="false">
-            More <span>&darr;</span>
-          </button>
-          <ul class="secondary">
-            <li>
-              <a target="_blank" href="/"> Home </a>
-            </li>
-            <li>
-              <a target="_blank" href="/contact-us"> Contact </a>
-            </li>
-            <li>
-              <a target="_blank" href="/gallery"> Gallery </a>
-            </li>
-            <li>
-              <a target="_blank" href="/about"> About </a>
-            </li>
-            <li>
-              <a target="_blank" href="/programs"> Programs </a>
-            </li>
-          </ul>
-        </li>
       </ul>
     </nav>
     <ul class="right">
@@ -98,236 +76,81 @@
   referrerpolicy="no-referrer"
 />
 </div>
-          <script type="module">
-        const primo = {
-          id: 'imizi',
-          data: {"nav":[{"label":"Home","url":""},{"label":"About Us","url":"about-us"},{"label":"Gallery","url":"gallery"},{"label":"Programs","url":"programs"}],"social":[{"icon":"twitter","name":"Twitter"},{"icon":"facebook","name":"facebook"},{"icon":"youtube","name":"YouTube"}],"cta":{"url":"cta","title":"Call to Action","active":false},"theme":{"color-text":"#222","color-accent":"#1D4ED8"},"site-nav":[{"link":{"label":"Home","url":"/","active":false}},{"link":{"label":"Contact","url":"/contact-us","active":false}},{"link":{"label":"Gallery","url":"/gallery","active":false}},{"link":{"label":"About","url":"/about","active":false}},{"link":{"label":"Programs","url":"/programs","active":false}}],"logo":{"image":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"title":""}},
-          fields: [{"id":"nhwjk","key":"nav","label":"Navigation Items","value":[{"label":"Home","url":""},{"label":"About Us","url":"about-us"},{"label":"Gallery","url":"gallery"},{"label":"Programs","url":"programs"}],"type":"repeater","fields":[{"id":"aun0f","key":"label","label":"Label","value":"","type":"text"},{"id":"i9whz","key":"url","label":"URL","value":"","type":"url"}]},{"id":"qdxmi","key":"social","label":"Social Links","value":[{"icon":"twitter","name":"Twitter"},{"icon":"facebook","name":"facebook"},{"icon":"youtube","name":"YouTube"}],"type":"repeater","fields":[{"id":"jorxb","key":"icon","label":"Icon","value":"","type":"text"},{"id":"badut","key":"name","label":"Name","value":"","type":"text"},{"id":"ynuen","key":"url","label":"URL","value":"","type":"url"}]},{"id":"fyjpt","key":"cta","label":"Call to Action","value":{"url":"cta","title":"Call to Action","active":false},"type":"link","fields":[]},{"id":"vuknd","key":"theme","label":"Theme","value":{"color-text":"#222","color-accent":"#1D4ED8"},"type":"group","fields":[{"id":"jfhwm","key":"color-text","label":"Text Color","value":"#222","type":"text","fields":[]},{"id":"jxcwy","key":"color-accent","label":"Accent Color","value":"#1D4ED8","type":"text","fields":[]}]},{"id":"uzlti","key":"site-nav","label":"Site Navigation","value":[{"link":{"label":"Home","url":"/","active":false}},{"link":{"label":"Contact","url":"/contact-us","active":false}},{"link":{"label":"Gallery","url":"/gallery","active":false}},{"link":{"label":"About","url":"/about","active":false}},{"link":{"label":"Programs","url":"/programs","active":false}}],"type":"repeater","fields":[{"id":"ehdht","key":"link","label":"Link","value":"","type":"link","fields":[]}]},{"id":"bpyhq","key":"logo","label":"Logo","value":{"image":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"title":""},"type":"group","fields":[{"id":"skhhd","key":"image","label":"Image","value":{"alt":"placeholder","url":"https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png","size":null},"type":"image","fields":[]},{"id":"vbgvn","key":"title","label":"Title","value":"","type":"text","fields":[]}]}]
-        }
-        const container = document.querySelector('.menu')
-const primary = container.querySelector('.tabs > ul')
-const primaryItems = primary.querySelectorAll('ul > li:not(.more)')
-container.classList.add('--jsfied')
-
-const secondary = container.querySelector('.secondary')
-const secondaryItems = secondary.querySelectorAll('li')
-const allItems = container.querySelectorAll('li')
-const moreLi = primary.querySelector('.more')
-const moreBtn = moreLi.querySelector('button')
-moreBtn.addEventListener('click', (e) => {
-  e.preventDefault()
-  container.classList.toggle('show-secondary')
-  moreBtn.setAttribute('aria-expanded', container.classList.contains('--show-secondary'))
-})
-
-const doAdapt = () => {
-  // reveal all items for the calculation
-  allItems.forEach((item) => {
-    item.classList.remove('hidden')
-  })
-
-  // hide items that won't fit in the Primary
-  let stopWidth = moreBtn.offsetWidth
-  let hiddenItems = []
-  const primaryWidth = primary.offsetWidth
-  primaryItems.forEach((item, i) => {
-    if(primaryWidth >= stopWidth + item.offsetWidth) {
-      stopWidth += item.offsetWidth
-    } else {
-      item.classList.add('hidden')
-      hiddenItems.push(i)
-    }
-  })
-  
-  // toggle the visibility of More button and items in Secondary
-  if(!hiddenItems.length) {
-    moreLi.classList.add('hidden')
-    container.classList.remove('show-secondary')
-    moreBtn.setAttribute('aria-expanded', false)
-  }
-  else {  
-    secondaryItems.forEach((item, i) => {
-      if(!hiddenItems.includes(i)) {
-        item.classList.add('hidden')
-      }
-    })
-  }
-}
-
-doAdapt() // adapt immediately on load
-window.addEventListener('resize', doAdapt) // adapt on window resize
-
-// hide Secondary on the outside click
-
-document.addEventListener('click', (e) => {
-  let el = e.target
-  while(el) {
-    if(el === secondary || el === moreBtn) {
-      return;
-    }
-    el = el.parentNode
-  }
-  container.classList.remove('show-secondary')
-  moreBtn.setAttribute('aria-expanded', false)
-})</script>
+          
         </div>
         <style type="text/css">#component-eznpl {
   padding: 1rem 0;
-  @-webkit-keyframes nav-secondary {
-    0% {
-      opacity: 0;
-      transform: translateY(-1em);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-}
-  #component-eznpl .container {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    place-items: space-between center;
-  }
-  #component-eznpl .container .logo img {
-        max-width: 10rem;
-      }
-  #component-eznpl .container nav {
-      display: flex;
-      justify-content: center;
-    }
-  #component-eznpl .container nav ul {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-  #component-eznpl .container nav ul li a {
-            font-weight: 600;
-            margin-left: 2rem;
-            -webkit-text-decoration: underline transparent;
-                    text-decoration: underline transparent;
-          }
-  #component-eznpl .container nav ul li a:hover {
-              -webkit-text-decoration-color: var(--color-accent, #222);
-                      text-decoration-color: var(--color-accent, #222);
-            }
-  #component-eznpl .container .right {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-    }
-  #component-eznpl .container .right .social-link {
-        padding-right: 1rem;
-      }
-  #component-eznpl .container .right .social-link i:hover {
-          color: var(--color-accent);
-        }
-  #component-eznpl .container .right .cta {
-        display: block;
-        padding: 0.5rem 1rem;
-        border: 1px solid var(--color-accent);
-        border-radius: 0.25rem;
-      }
-  #component-eznpl .container .right .cta:hover {
-          color: white;
-          background: var(--color-accent);
-        }
-  #component-eznpl {
-  --color-bg: #D51E49;
-  --color-bg--dark: darken(var(--color-bg), 7%);
-  --color-bg--darker: darken(var(--color-bg), 14%);
-  --color-text: #FAF3DD;
 }
   #component-eznpl .menu {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
   }
   #component-eznpl .menu .logo {
       font-weight: 600;
-      background: gainsboro;
       padding: 0 2rem;
-      flex: 1;
       display: flex;
       align-items: center;
     }
+  #component-eznpl .menu .logo img {
+        max-width: 10rem;
+      }
+  #component-eznpl .menu nav {
+      display: flex;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+  #component-eznpl .menu nav ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+  #component-eznpl .menu nav ul li a {
+            font-weight: 600;
+            margin-left: 2rem;
+            -webkit-text-decoration: underline transparent;
+                    text-decoration: underline transparent;
+          }
+  #component-eznpl .menu nav ul li a:hover {
+              -webkit-text-decoration-color: var(--color-accent, #222);
+                      text-decoration-color: var(--color-accent, #222);
+            }
+  #component-eznpl .menu .right {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  #component-eznpl .menu .right .social-link {
+        padding-right: 1rem;
+      }
+  #component-eznpl .menu .right .social-link i:hover {
+          color: var(--color-accent);
+        }
+  #component-eznpl .menu .right .cta {
+        display: block;
+        padding: 0.5rem 1rem;
+        border: 1px solid var(--color-accent);
+        border-radius: 0.25rem;
+      }
+  #component-eznpl .menu .right .cta:hover {
+          color: white;
+          background: var(--color-accent);
+        }
   #component-eznpl .tabs {
     position: relative;
   }
-  #component-eznpl .tabs .hidden {
-      display: none;
-    }
-  #component-eznpl .tabs:not(.--jsfied) {
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-  #component-eznpl .tabs a,
-  #component-eznpl .tabs button {
-      width: 100%;
-      height: 100%;
-      display: block;
-      font-size: 1em;
-      line-height: 1.2;
-      text-align: center;
-      color: var(--color-text);
-      background-color: var(--color-bg);
-    }
   #component-eznpl .tabs .primary {
       display: flex;
-      flex: 1;
     }
-  #component-eznpl .tabs .primary > li {
-        flex-grow: 1;
-        background-color: var(--color-bg);
+  @media (min-width: 900px) {
+      #component-eznpl header .menu {
+        flex-direction: row;
       }
-  #component-eznpl .tabs .primary > li + li {
-          border-left: 1px solid var(--color-bg--dark);
+        #component-eznpl header .menu nav {
+          margin: 0;
         }
-  #component-eznpl .tabs .primary > li > a,
-      #component-eznpl .tabs .primary > li > button {
-          white-space: nowrap;
-          padding: 1em 0.6em;
-          box-shadow: inset 0 -0.2em 0 var(--color-bg--dark);
-        }
-  #component-eznpl .tabs .primary .more {
-        background-color: var(--color-bg--dark);
-      }
-  #component-eznpl .tabs .primary .more > button span {
-          display: inline-block;
-          transition: transform 0.2s;
-        }
-  #component-eznpl .tabs .secondary {
-      max-width: 100%;
-      min-width: 10em;
-      display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      box-shadow: 0 0.3em 0.5em rgba(#000, 0.3);
-      -webkit-animation: nav-secondary 0.2s;
-              animation: nav-secondary 0.2s;
-    }
-  #component-eznpl .tabs .secondary li {
-        border-top: 1px solid var(--color-bg);
-        background-color: var(--color-bg--dark);
-      }
-  #component-eznpl .show-secondary .secondary {
-    display: block;
-  }
-  #component-eznpl .show-secondary .primary .more > button span {
-      transform: rotate(180deg);
-    }
-  @keyframes nav-secondary {
-    0% {
-      opacity: 0;
-      transform: translateY(-1em);
-    }
-
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }</style>
       </div>
       
@@ -340,28 +163,28 @@ document.addEventListener('click', (e) => {
 <img src="" alt="￰">￰</div>
           
         </div>
-        <style type="text/css">#component-rqkpm {
+        <style type="text/css">#component-pvaxa {
   --verydarkgray: #222222;
   background-color: rgba(10, 10, 10, .8);
   color: white;
   padding: 5rem 0;
   position: relative;
 }
-  #component-rqkpm header {
+  #component-pvaxa header {
     background-blend-mode: multiply;
     z-index: 1;
     position: relative;
   }
-  #component-rqkpm header .heading {
+  #component-pvaxa header .heading {
       font-size: 2rem;
       font-weight: 600;
       line-height: 1.2;
       margin-bottom: 1rem;
     }
-  #component-rqkpm header .subheading {
+  #component-pvaxa header .subheading {
       font-size: 1.25rem;
     }
-  #component-rqkpm img {
+  #component-pvaxa img {
     opacity: 1;
     position: absolute;
     inset: 0;
@@ -433,47 +256,47 @@ document.addEventListener('click', (e) => {
 </main></div>
           
         </div>
-        <style type="text/css">#component-eszpr {
+        <style type="text/css">#component-yexjm {
   padding: 4rem 0;
 }
-  #component-eszpr main {
+  #component-yexjm main {
     display: grid;
     grid-template-columns: 1fr;
     gap: 3rem;
   }
-  #component-eszpr main form {
+  #component-yexjm main form {
       max-width: 400px;
     }
-  #component-eszpr main form legend {
+  #component-yexjm main form legend {
         display: grid;
         font-size: 1.75rem;
         font-weight: 500;
         line-height: 1.2;
         margin-bottom: 1.5rem;
       }
-  #component-eszpr main form legend span:last-child {
+  #component-yexjm main form legend span:last-child {
           font-size: 1.25rem;
           margin-top: .25rem;
         }
-  #component-eszpr main form .fieldgroup {
+  #component-yexjm main form .fieldgroup {
         margin-bottom: 1.5rem;
       }
-  #component-eszpr main form .fieldgroup:last-of-type {
+  #component-yexjm main form .fieldgroup:last-of-type {
           margin-bottom: 0;
         }
-  #component-eszpr main form .fieldgroup label {
+  #component-yexjm main form .fieldgroup label {
           display: block;
           margin-bottom: 0.5rem;
           font-size: 0.875rem;
           font-weight: 600;
         }
-  #component-eszpr main form .fieldgroup input,
-      #component-eszpr main form .fieldgroup textarea {
+  #component-yexjm main form .fieldgroup input,
+      #component-yexjm main form .fieldgroup textarea {
           border-radius: 1px;
           width: 100%;
           background: #efefef;
         }
-  #component-eszpr main form .button {
+  #component-yexjm main form .button {
         background-color: #774dd4;
         color: #fff;
         padding: 0.5rem;
@@ -482,23 +305,23 @@ document.addEventListener('click', (e) => {
         border-radius: 3px;
         margin-top: 1.5rem;
       }
-  #component-eszpr main aside {
+  #component-yexjm main aside {
       flex: 2;
     }
-  #component-eszpr main aside > div {
+  #component-yexjm main aside > div {
         margin: 2rem 0;
       }
-  #component-eszpr main aside > div ul li {
+  #component-yexjm main aside > div ul li {
             font-weight: 500;
             margin-bottom: 0.25rem;
             display: flex;
           }
-  #component-eszpr main aside > div ul li i {
+  #component-yexjm main aside > div ul li i {
               margin-top: 0.25rem;
               margin-right: 0.5rem;
             }
   @media (min-width: 600px) {
-    #component-eszpr main {
+    #component-yexjm main {
       grid-template-columns: 2fr 1fr;
     }
   }</style>
@@ -530,14 +353,48 @@ document.addEventListener('click', (e) => {
       </div>
       <div>
         <h4>Company</h4>
-        <ul>
-          <li>About Us</li>
-          <li>Programs</li>
-          <li>Gallery</li>
+        <ul class="link-list">
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/contact-us">Contact</a>
+          </li>
+          <li>
+            <a href="/gallery">Gallery</a>
+          </li>
+          <li>
+            <a href="/about">About</a>
+          </li>
+          <li>
+            <a href="/programs">Programs</a>
+          </li>
         </ul>
       </div>
     </div>
-    <a href="https://primo.af" class="primo">built primo</a>
+		<div class="sub-footer">
+    	<a href="https://primo.af" class="primo">built primo</a>
+      <div class="social">
+        <span>Follow us:</span>
+        <ul>
+          <li>
+            <a href="#">
+            	<i class="fab fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            	<i class="fab fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+            	<i class="fab fa-youtube"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </div>
 </footer>
 <link
@@ -589,6 +446,33 @@ document.addEventListener('click', (e) => {
             font-size: 1.25rem;
             margin-bottom: 0.25rem;
           }
+    #component-wikvu footer .container .content .link-list a {
+            text-decoration: underline;
+          }
+    #component-wikvu footer .container .sub-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #ddd;
+        margin-top: 2rem;
+        padding-top: 2rem;
+      }
+    #component-wikvu footer .container .sub-footer .social {
+          display: flex;
+        }
+    #component-wikvu footer .container .sub-footer .social span {
+            margin-right: 0.5rem;
+            font-weight: 600;
+          }
+    #component-wikvu footer .container .sub-footer .social ul {
+            display: flex;
+          }
+    #component-wikvu footer .container .sub-footer .social ul li a {
+              margin-left: 0.75rem;
+            }
+    #component-wikvu footer .container .sub-footer .social ul li a:hover {
+                opacity: 0.75;
+              }
   @media (min-width: 600px) {
         #component-wikvu footer .container .content {
           grid-template-columns: 2fr 1fr 1fr;
