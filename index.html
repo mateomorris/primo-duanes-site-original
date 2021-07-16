@@ -68,13 +68,7 @@
     </ul>
   </div>
 </header>
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css"
-  integrity="sha512-apX8rFN/KxJW8rniQbkvzrshQ3KvyEH+4szT3Sno5svdr6E/CP0QE862yEeLBMUnCqLko8QaugGkzvWS7uNfFQ=="
-  crossorigin="anonymous"
-  referrerpolicy="no-referrer"
-/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </div>
           
         </div>
@@ -90,7 +84,6 @@
   }
   #component-imizi .menu .logo {
       font-weight: 600;
-      padding: 0 2rem;
       display: flex;
       align-items: center;
     }
@@ -124,6 +117,7 @@
     }
   #component-imizi .menu .right .social-link {
         padding-right: 1rem;
+        font-size: 1.5rem;
       }
   #component-imizi .menu .right .social-link i:hover {
           color: var(--color-accent);
@@ -143,6 +137,7 @@
   }
   #component-imizi .tabs .primary {
       display: flex;
+      margin: 0 1rem;
     }
   @media (min-width: 900px) {
       #component-imizi header .menu {
@@ -190,16 +185,13 @@
         font-size: 1.25rem;
       }
   #component-nplrs header .container .links {
-        display: grid;
-        align-items: center;
-        grid-template-columns: 1fr;
-        gap: 1rem;
         padding: 1rem;
         max-width: 600px;
         margin: 0 auto;
         margin-top: 1rem;
       }
   #component-nplrs header .container .links .button {
+          margin: 0 1rem;
           text-transform: uppercase;
           background-color: white;
           color: var(--verydarkgray);
@@ -320,11 +312,6 @@
         <style type="text/css">#component-jaagh {
   padding: 3rem 0;
 }
-  #component-jaagh section .heading {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
-    }
   #component-jaagh section .images {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -390,12 +377,6 @@
     display: grid;
     grid-template-columns: 1fr;
   }
-  #component-ryvdu section .heading {
-      font-size: 2rem;
-      font-weight: bold;
-      line-height: 1.2;
-      margin-bottom: 2rem;
-    }
   #component-ryvdu section .events {
       display: grid;
       grid-template-columns: 1fr;
@@ -475,9 +456,6 @@
   border-bottom: 1px solid #eee;
 }
   #component-gehmg section .heading {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 1.5rem;
       text-align: center;
     }
   #component-gehmg section .images {
@@ -504,71 +482,77 @@
       
       <div class="block" id="block-yprqy">
         <div class="primo-component" id="component-yprqy">
-          <div><footer>
-  <div class="container">
-    <div class="content">
-      <div>
-        <a class="logo" href="#">
-          <img
-            src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png"
-          />
-        </a>
-        <div class="icon-item">
-          <i class="fas fa-phone"></i>
-          <span><p>571-485-2833</p></span>
-        </div>
+          <div><footer class="container">
+  <div class="content">
+    <div>
+      <a class="logo" href="#">
+        <img
+          src="https://placeholder.com/wp-content/uploads/2018/10/placeholder.com-logo2.png"
+        />
+      </a>
+      <div class="icon-item">
+        <i class="fas fa-phone"></i>
+        <span><p>571-485-2833</p></span>
       </div>
-      <div>
-        <h4>Business Hours</h4>
-        <ul>
-          <li>Monday-Friday</li>
-          <li>Saturday</li>
-          <li>Sunday</li>
-        </ul>
+      <div class="icon-item">
+        <i class="fas fa-envelope"></i>
+        <span><p><a href="contact@somebody.com">contact@somebody.com</a></p></span>
       </div>
-      <div>
-        <h4>Company</h4>
-        <ul class="link-list">
-          <li>
-            <a href="/">Home</a>
-          </li>
-          <li>
-            <a href="/contact-us">Contact</a>
-          </li>
-          <li>
-            <a href="/gallery">Gallery</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-          <li>
-            <a href="/programs">Programs</a>
-          </li>
-        </ul>
+      <div class="icon-item">
+        <i class="fas fa-inbox"></i>
+        <span><p>Send us an inquiry</p></span>
       </div>
     </div>
-		<div class="sub-footer">
-    	<a href="https://primo.af" class="primo">built primo</a>
-      <div class="social">
-        <span>Follow us:</span>
-        <ul>
-          <li>
-            <a href="#">
-            	<i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-            	<i class="fab fa-facebook"></i>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-            	<i class="fab fa-youtube"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <div>
+			<h3 id="businesshours">Business Hours</h3>
+<ul>
+<li>Monday - Friday | 7am - 5pm</li>
+<li>Saturday | 4am - 2pm</li>
+<li>Sunday | Closed</li>
+</ul>
+    </div>
+    <div>
+      <h4>Company</h4>
+      <ul class="link-list">
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/contact-us">Contact</a>
+        </li>
+        <li>
+          <a href="/gallery">Gallery</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+        <li>
+          <a href="/programs">Programs</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="sub-footer">
+    <a href="https://primo.af" class="primo">built primo</a>
+    <div class="social">
+      <span>Follow us:</span>
+      <ul>
+        <li>
+          <a href="#">
+            <i class="fab fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fab fa-facebook"></i>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </footer>
@@ -581,77 +565,79 @@
 </div>
           
         </div>
-        <style type="text/css">#component-yprqy footer {
-    background-color: #eee;
-    padding: 2rem 0;
-    transition: color 0.1s, opacity 0.1s;
-  }
-    #component-yprqy footer .container {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
+        <style type="text/css">#component-yprqy {
+  background-color: #eee;
+  padding: 2rem 0;
+  transition: color 0.1s, opacity 0.1s;
+}
+  #component-yprqy footer .logo img {
+      display: inline-block;
+      width: 100%;
+      max-width: 10rem;
+      margin-bottom: 1rem;
     }
-    #component-yprqy footer .container .logo img {
-        display: inline-block;
-        width: 100%;
-        max-width: 10rem;
-        margin-bottom: 1rem;
+  #component-yprqy footer .primo {
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  #component-yprqy footer .primo:hover { color:rgb(248,68,73)
       }
-    #component-yprqy footer .container .primo {
-        font-size: 0.75rem;
-        font-weight: bold;
+  #component-yprqy footer .content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  #component-yprqy footer .content .icon-item {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        font-weight: 600;
       }
-    #component-yprqy footer .container .primo:hover { color:rgb(248,68,73)
+  #component-yprqy footer .content .icon-item i {
+          margin-right: 0.5rem;
         }
-    #component-yprqy footer .container .content {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
+  #component-yprqy footer .content > div :is(h1, h2, h3, h4, h5, h6) {
+          font-weight: 600;
+          font-size: 1.25rem;
+          margin-bottom: 0.25rem;
+        }
+  #component-yprqy footer .content .link-list a {
+          text-decoration: underline;
+        }
+  #component-yprqy footer .sub-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid #ddd;
+      margin-top: 2rem;
+      padding-top: 2rem;
+    }
+  #component-yprqy footer .sub-footer .social {
+        display: flex;
+        flex-direction: column;
       }
-    #component-yprqy footer .container .content .icon-item {
-          display: flex;
-          align-items: center;
-          flex-wrap: wrap;
+  #component-yprqy footer .sub-footer .social span {
+          margin-right: 1rem;
           font-weight: 600;
         }
-    #component-yprqy footer .container .content .icon-item i {
-            margin-right: 0.5rem;
-          }
-    #component-yprqy footer .container .content > div h4 {
-            font-weight: 600;
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-          }
-    #component-yprqy footer .container .content .link-list a {
-            text-decoration: underline;
-          }
-    #component-yprqy footer .container .sub-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        border-top: 1px solid #ddd;
-        margin-top: 2rem;
-        padding-top: 2rem;
-      }
-    #component-yprqy footer .container .sub-footer .social {
+  #component-yprqy footer .sub-footer .social ul {
           display: flex;
         }
-    #component-yprqy footer .container .sub-footer .social span {
-            margin-right: 0.5rem;
-            font-weight: 600;
+  #component-yprqy footer .sub-footer .social ul li a {
+            font-size: 1.5rem;
+            margin-right: 0.75rem;
           }
-    #component-yprqy footer .container .sub-footer .social ul {
-            display: flex;
-          }
-    #component-yprqy footer .container .sub-footer .social ul li a {
-              margin-left: 0.75rem;
+  #component-yprqy footer .sub-footer .social ul li a:hover {
+              opacity: 0.75;
             }
-    #component-yprqy footer .container .sub-footer .social ul li a:hover {
-                opacity: 0.75;
-              }
   @media (min-width: 600px) {
-        #component-yprqy footer .container .content {
-          grid-template-columns: 2fr 1fr 1fr;
-        }
+      #component-yprqy footer .content {
+        grid-template-columns: 2fr 1fr 1fr;
+      }
+      #component-yprqy footer .sub-footer .social {
+        flex-direction: row;
+        align-items: center;
+      }
   }</style>
       </div>
       
